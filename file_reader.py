@@ -1,3 +1,5 @@
+"Funtion for read input file"
+
 def read_file(input_file):
     """
         read the file contents and split them into 3 modules:

@@ -17,8 +17,8 @@ class MerchantRobot:
             # print(patterns) -> ['glob', 'is', 'I'] ... ... 
             
             if len(patterns) == 3 and patterns[1] == 'is':
-                
-                self.words_book.update({patterns[0]: patterns[2]})
+               if patterns[0] not in self.words_book:
+                    self.words_book.update({patterns[0]: patterns[2]})
                 
             else:
                 # bad pattern 
@@ -46,10 +46,11 @@ class MerchantRobot:
 
             if amount_arabic:
                 # price by unit
-                good_price = float(pattern_price)/amount_arabic
+                unit_price = float(pattern_price)/amount_arabic
 
                 # print(pattern_price, amount_arabic)
-                self.prices_book.update({metal_name: good_price})
+                if metal_name not in self.prices_book:
+                    self.prices_book.update({metal_name: unit_price})
                 
             else:
                 print('Error while updaing prices dict with:', metal_name, amount_arabic)
@@ -61,7 +62,6 @@ class MerchantRobot:
         roman_nums = []
         # print(galactic_words_list)
         for item in galactic_words_list:
-
             if item in self.words_book:
                 
                 roman_nums.append(self.words_book[item])
