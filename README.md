@@ -1,3 +1,5 @@
+PROBLEM THREE: MERCHANT'S GUIDE TO THE GALAXY 
+
 ### Test Input
 ```
 glob is I
